@@ -393,7 +393,7 @@ html, body {
     width: 100%;
     min-width: 12.5rem;
     height: 7.5rem;
-    margin: 0;
+    /*margin: 0;*/
     padding: 0.875rem;
     border-radius: 1.25rem;
     border: none;
@@ -402,7 +402,7 @@ html, body {
     transition: .25s ease-in-out;
     transition-property: background-color, box-shadow;
     cursor: pointer;
-    appearance: none;
+    /*appearance: none;*/
 }
 
 .event_slim .event__button {
@@ -420,8 +420,8 @@ html, body {
     left: 0.875rem;
     width: 1.5rem;
     height: 1.5rem;
-    background: no-repeat 50% 50%;
-    background-size: contain;
+    /*background: no-repeat 50% 50%;*/
+    /*background-size: contain;*/
 }
 
 .event__icon_temp2,
@@ -449,7 +449,7 @@ html, body {
 .event__title {
     margin: 0;
     font-size: 0.875rem;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: #333333;
 }
 
@@ -472,7 +472,7 @@ html, body {
         display: flex;
         padding-bottom: 0.3125rem;
         overflow: auto;
-        scrollbar-width: none;
+        /*scrollbar-width: none;*/
     }
 
     .event-grid::-webkit-scrollbar {
@@ -483,7 +483,7 @@ html, body {
 .section__panel {
     padding-bottom: .625rem;
     overflow-x: auto;
-    scrollbar-width: none;
+    /*scrollbar-width: none;*/
 }
 
 .section__panel::-webkit-scrollbar {
@@ -517,14 +517,12 @@ html, body {
         align-items: flex-start;
         gap: 0.9375rem;
         height: auto;
-        /*padding-top: 1rem;*/
         padding-bottom: 1rem;
     }
 }
 
 .footer__list {
     display: flex;
-    /*align-items: baseline;*/
     gap: 0.9375rem;
     margin: 0;
     padding: 0;
@@ -534,7 +532,6 @@ html, body {
 @media (max-width: 768px) {
     .footer__list {
         flex-direction: column;
-        /*align-items: flex-start;*/
     }
 }
 
