@@ -52,20 +52,22 @@
             }
 
             let index = list.indexOf(selected);
-            if (event.which === 37) {
-                // left
-                --index;
-            } else if (event.which === 39) {
-                // right
-                ++index;
-            } else if (event.which === 36) {
-                // home
-                index = 0;
-            } else if (event.which === 35) {
-                // end
-                index = list.length - 1;
-            } else {
-                return;
+
+            switch (event.which) {
+                case 37:
+                    --index;
+                    break;
+                case 39:
+                    ++index;
+                    break;
+                case 36:
+                    index = 0;
+                    break;
+                case 35:
+                    index = list.length - 1;
+                    break;
+                default:
+                    break;
             }
 
             if (index >= list.length) {
