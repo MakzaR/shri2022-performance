@@ -1,1 +1,50 @@
-(()=>{function e(e,t,i){Array.from(e).forEach(e=>{e.addEventListener(t,i)})}function t(t){let i=t.querySelector(".sec__tb_a").dataset.id,a=t.querySelectorAll(".sec__tb"),r=Array.from(a).map(e=>e.dataset.id),n=t.querySelector(".sec__sel");function s(e){let a=t.querySelector(`.sec__tb[data-id=${e}]`),r=t.querySelector(`.sec__p[data-id=${e}]`),s=t.querySelector(".sec__tb_a"),l=t.querySelector(".sec__p:not(.sec__p_h)");i=e,s.classList.remove("section__tab_active"),s.setAttribute("aria-selected","false"),s.removeAttribute("tabindex"),a.classList.add("section__tab_active"),a.setAttribute("aria-selected","true"),a.setAttribute("tabindex","0"),a.focus({preventScroll:!0}),l.classList.add("section__panel_hidden"),l.setAttribute("aria-hidden","true"),r.classList.remove("section__panel_hidden"),r.setAttribute("aria-hidden","false"),n.value=e}n.addEventListener("input",()=>{s(n.value)}),e(a,"click", e=>{let t=e.target.dataset.id;s(t)}),e(a,"keydown", e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;let t=r.indexOf(i);if(37===e.which)--t;else if(39===e.which)++t;else if(36===e.which)t=0;else{if(35!==e.which)return;t=r.length-1}t>=r.length?t=0:t<0&&(t=r.length-1),s(r[t]),e.preventDefault()})}function i(e){let t=!1,i=document.querySelector(".hed__lis");e.addEventListener("click",()=>{t=!t,e.setAttribute("aria-expanded",t?"true":"false"),e.querySelector(".header__menu-text").textContent=t?"Закрыть меню":"Открыть меню",i.classList.toggle("header__links_opened",t),i.classList.add("header__links-toggled")})}t(document.querySelector(".m__dev")),i(document.querySelector(".hed__m"))})();
+function bind(e, t, i) {
+    for (let a = 0; a < e.length; a++) e[a].addEventListener(t, i)
+}
+
+function makeTabs(e) {
+    let t = e.querySelector(".section__tab_active").dataset.id;
+    const i = e.querySelectorAll(".section__tab");
+    const a = Array.from(i).map(e => e.dataset.id);
+    const n = e.querySelector(".section__select");
+
+    function s(i) {
+        const a = e.querySelector(`.section__tab[data-id=${i}]`);
+        const s = e.querySelector(`.section__panel[data-id=${i}]`);
+        const c = e.querySelector(".section__tab_active");
+        const r = e.querySelector(".section__panel:not(.section__panel_hidden)");
+
+        t = i
+
+        c.classList.remove("section__tab_active")
+        c.setAttribute("aria-selected", "false")
+        c.removeAttribute("tabindex")
+        a.classList.add("section__tab_active")
+        a.setAttribute("aria-selected", "true")
+        a.setAttribute("tabindex", "0")
+        a.focus({preventScroll: !0})
+
+        r.classList.add("section__panel_hidden")
+        r.setAttribute("aria-hidden", "true")
+        s.classList.remove("section__panel_hidden")
+        s.setAttribute("aria-hidden", "false")
+
+        n.value = i
+    }
+
+    n.addEventListener("input", () => {
+        s(n.value)
+    }), bind(i, "click", e => {
+        s(e.target.dataset.id)
+    }), bind(i, "keydown", e => {
+        if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        let i = a.indexOf(t);
+        if (37 === e.which) --i; else if (39 === e.which) ++i; else if (36 === e.which) i = 0; else {
+            if (35 !== e.which) return;
+            i = a.length - 1
+        }
+        i >= a.length ? i = 0 : i < 0 && (i = a.length - 1), s(a[i]), e.preventDefault()
+    })
+}
+
+makeTabs(document.querySelector(".main__devices"));
