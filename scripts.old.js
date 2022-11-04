@@ -6,16 +6,16 @@
     }
 
     function makeTabs(node) {
-        let selected = node.querySelector('.section__tab_active').dataset.id;
-        const tabs = node.querySelectorAll('.section__tab');
+        let selected = node.querySelector('.sec__tb_a').dataset.id;
+        const tabs = node.querySelectorAll('.sec__tb');
         const list = Array.from(tabs).map(node => node.dataset.id);
-        const select = node.querySelector('.section__select');
+        const select = node.querySelector('.sec__sel');
 
         function selectTab(newId) {
-            const newTab = node.querySelector(`.section__tab[data-id=${newId}]`);
-            const newPanel = node.querySelector(`.section__panel[data-id=${newId}]`);
-            const oldTab = node.querySelector('.section__tab_active');
-            const oldPanel = node.querySelector('.section__panel:not(.section__panel_hidden)');
+            const newTab = node.querySelector(`.sec__tb[data-id=${newId}]`);
+            const newPanel = node.querySelector(`.sec__p[data-id=${newId}]`);
+            const oldTab = node.querySelector('.sec__tb_a');
+            const oldPanel = node.querySelector('.sec__p:not(.sec__p_h)');
 
             selected = newId;
 
@@ -81,17 +81,17 @@
 
     function makeMenu(node) {
         let expanded = false;
-        const links = document.querySelector('.header__links');
+        const links = document.querySelector('.hed__lis');
 
         node.addEventListener('click', () => {
             expanded = !expanded;
             node.setAttribute('aria-expanded', expanded ? 'true' : 'false');
             node.querySelector('.header__menu-text').textContent = expanded ? 'Закрыть меню' : 'Открыть меню';
-            links.classList.toggle('header__links_opened', expanded);
-            links.classList.add('header__links-toggled');
+            links.classList.toggle('hed__lis_o', expanded);
+            links.classList.add('hed__lis-t');
         });
     }
 
-    makeTabs(document.querySelector('.main__devices'));
-    makeMenu(document.querySelector('.header__menu'));
+    makeTabs(document.querySelector('.m__dev'));
+    makeMenu(document.querySelector('.hed__m'));
 })();
