@@ -54,16 +54,12 @@
             let index = list.indexOf(selected);
 
             if (event.which === 37) {
-                // left
                 --index;
             } else if (event.which === 39) {
-                // right
                 ++index;
             } else if (event.which === 36) {
-                // home
                 index = 0;
             } else if (event.which === 35) {
-                // end
                 index = list.length - 1;
             } else {
                 return;
@@ -87,7 +83,6 @@
         node.addEventListener('click', () => {
             expanded = !expanded;
             node.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-            node.querySelector('.header__menu-text').textContent = expanded ? 'Закрыть меню' : 'Открыть меню';
             links.classList.toggle('hed__lis_o', expanded);
             links.classList.add('hed__lis-t');
         });
