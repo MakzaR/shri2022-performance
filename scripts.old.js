@@ -1,6 +1,6 @@
 (() => {
     function bind(nodes, event, handler) {
-        for (let i = 0; i < nodes.length; i++) {
+        for (let i = 0; i < nodes.length; i ++) {
             nodes[i].addEventListener(event, handler);
         }
     }
